@@ -2,14 +2,14 @@
     <div>
         <dialog id="task_dialog">
             <form id="task_form"  @submit.prevent="taskStore.form_method === 'POST' ? handlePostSubmit() : handlePutSubmit(), task_dialog.close()">
-                <input type="hidden" id="id" name="id" />
-                <input type="text" id="title" class="task_form_title" name="title" placeholder="Title" v-model="title"/>
-                <input type="text" id="description" class="description" name="description" placeholder="Description" v-model="description" />
+                <input type="hidden" id="id" ref="id" name="id" />
+                <input type="text" id="title" ref="title" class="task_form_title" name="title" placeholder="Title" v-model="title"/>
+                <input type="text" id="description" ref="description" class="description" name="description" placeholder="Description" v-model="description" />
                 <label for="start_date">Date and Time</label>
-                <input type="datetime-local" id="start_date" class="task_form_start_date" name="start_date" :min="min" v-model="start_date" />
+                <input type="datetime-local" id="start_date" ref="start_date" class="task_form_start_date" name="start_date" :min="min" v-model="start_date" />
                 <div class="buttons">
-                  <button type="button" id="cancel" @click="task_dialog.close()">Cancel</button>
-                  <button type="submit" id="submit">Submit</button>
+                  <button type="button" id="cancel" ref="cancel" @click="task_dialog.close()">Cancel</button>
+                  <button type="submit" id="submit" ref="submit">Submit</button>
                 </div>
                 <p v-if="taskStore.form_method === 'POST'">POST</p>
                 <p v-else>PUT</p>
