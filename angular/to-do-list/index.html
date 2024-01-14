@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    </head>
+    <body ng-controller="taskController">
+        <task-form></task-form>
+        <div id="tasks">
+            <task ng-repeat="task in tasks" task="task"></task>
+        </div>
+    </body>
+    <!-- Modules -->
+    <script src="./app.js"></script>
+    <!-- Controllers -->
+    <script src="./controllers/taskController.js"></script>
+    <!-- Directives -->
+    <script src="./directives/taskFormDirective.js"></script>
+    <script src="./directives/taskDirective.js"></script>
+</html>

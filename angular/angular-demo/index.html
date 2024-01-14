@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    </head>
+    <body>
+        <div ng-controller="userController">
+            <form name="myForm">
+                <input
+                    name="firstName"
+                    type="text"
+                    ng-model="myFormData.firstName"
+                    placeholder="First Name"
+                    required
+                />
+                <input
+                    name="lastName"
+                    type="text"
+                    ng-model="myFormData.lastName"
+                    placeholder="Last Name"
+                />
+                <input
+                    name="email"
+                    type="email"
+                    ng-model="myFormData.email"
+                    placeholder="Email Address"
+                />
+                <p ng-show="myForm.email.$error.email">Not a valid email address</p>
+                <button type="submit">Submit</button>
+            </form>
+
+            <code>{{ myFormData.firstName }}</code>
+            <code>{{ myFormData.lastName }}</code>
+            <code>Valid: {{ myForm.email.$valid}}</code>
+            <code>Dirty: {{ myForm.email.$dirty}}</code>
+            <code>Touched: {{ myForm.email.$touched}}</code>
+            <p>{{ text }}</p>
+            <h3>Names</h3>
+            <p>Full Names: {{ fullName() }}</p>
+            <ul>
+                <li ng-repeat="name in names">{{ name }}</li>
+            </ul>
+            <test-directive></test-directive> 
+            <button type="button" ng-click="changeFirstName()">Change Name</button>
+            <button type="button" ng-click="changeText()">Change Txxt</button>
+        </div>
+        <div ng-controller="customerController">
+            <!-- <p>{{ myUrl }}</p> -->
+            <p ng-repeat="customer in customers">{{ customer.Name }}</p>
+        </div>
+    </body>
+    <style>
+        input.ng-invalid {
+            background-color: brown;
+        }
+    </style>
+        <!-- Modules -->
+        <script src="./app.js"></script>
+        <!-- Controllers -->
+        <script src="./controllers/userController.js"></script>
+        <script src="./controllers/customerController.js"></script>
+        <!-- Directives -->
+        <script src="./directives/testDirective.js"></script>
+
+</html>

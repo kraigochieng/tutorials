@@ -3,7 +3,7 @@ import './App.css';
 import Car from './components/Car'
 
 function App() {
-  const cars = ['Volvo', 'BMV', 'Subaru']
+				const cars = ['Volvo', 'BMV', 'Subaru']
   return (
     <div className="App">
       <h1>Cars</h1>
