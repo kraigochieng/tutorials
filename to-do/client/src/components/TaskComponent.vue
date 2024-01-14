@@ -25,7 +25,7 @@
 </template>
 
 <script setup>
-    import { defineProps, reactive, onMounted } from 'vue';
+    import { ref, defineProps, reactive, onMounted } from 'vue';
     import { useTaskStore } from '@/stores/taskStore';
 
     let task_dialog = reactive({})
@@ -55,9 +55,7 @@
 
     function handleUpdate() {
         let task = JSON.stringify(props.task)
-        let form_title = document.querySelector('#title')
-        form_title = props.task.title
-        console.log(for)
+        console.log()
         sessionStorage.setItem("task", task)
         console.log(task)
     }

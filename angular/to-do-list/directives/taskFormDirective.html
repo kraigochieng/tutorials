@@ -1,0 +1,13 @@
+<form name="taskForm">
+    <input
+        name="title"
+        ng-model="taskFormData.title"
+        placeholder="Title"
+    />
+    <textarea
+        name="description"
+        ng-model="taskFormData.description"
+        placeholder="Description"
+    ></textarea>
+    <button type="submit" ng-click="addTask()">Add Task</button>
+</form>
